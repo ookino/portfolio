@@ -3,19 +3,24 @@ import { createContext, useMemo, useState } from 'react';
 
 import Fonts from '../components/global/fonts';
 import Seo from '../components/global/seo';
+import { IContext } from '../interfaces';
 
+import { data } from './data';
 import { theme } from './theme';
 
-const Context = createContext<any>(null);
+const Context = createContext<IContext>({
+  data,
+});
+
 const Provider = ({ children, ...props }: any) => {
   const [defaultTheme, setDefaultTheme] = useState(theme);
 
-  const value = useMemo(() => ({ defaultTheme, setDefaultTheme }), [defaultTheme]);
-
+  const memoizedTheme = useMemo(() => ({ defaultTheme, setDefaultTheme }), [defaultTheme]);
+  const memoizedData = useMemo(() => ({ data }), []);
   return (
-    <Context.Provider value={value} {...props}>
+    <Context.Provider value={memoizedData} {...props}>
       <Seo />
-      <ChakraProvider theme={value.defaultTheme}>
+      <ChakraProvider theme={memoizedTheme.defaultTheme}>
         <Fonts />
         {children}
       </ChakraProvider>

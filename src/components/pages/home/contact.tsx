@@ -1,50 +1,16 @@
-import { Stack, Box, Heading, Text, Flex, SimpleGrid, Icon, Tooltip } from '@chakra-ui/react';
-import Link from 'next/link';
-import { IoMail, IoLogoWhatsapp } from 'react-icons/io5';
-import { SiGithub, SiLinkedin, SiInstagram } from 'react-icons/si';
+import { Stack, Box, Heading, Text, Flex, Icon, Tooltip } from '@chakra-ui/react';
+import { useContext } from 'react';
 
+import { Context } from '../../../context/global';
 import SectionContainer from '../../global/section-container';
 
-export const socialLinks = [
-  {
-    icon: SiGithub,
-    path: 'https://github.com/',
-    name: 'Github',
-    color: 'gray',
-  },
-  {
-    icon: SiLinkedin,
-    path: 'https://linkedin.com/in/yaseerokino/',
-    name: 'Linkedin',
-    color: 'linkedin',
-  },
-  {
-    icon: SiInstagram,
-    path: 'https://www.behance.net/yaseerokino',
-    name: 'Instagram',
-    color: 'pink',
-  },
-];
-
-export const contactLinks = [
-  {
-    tooltip: 'Send an Email',
-    name: 'email',
-    path: 'mailto:hello@yaseerokino.com',
-    logo: IoMail,
-    color: 'cyan',
-  },
-
-  {
-    tooltip: 'Send a Whatsapp message',
-    name: 'whatsapp',
-    path: 'https://wa.me/message/SOQ7CQXDDHMVP1',
-    logo: IoLogoWhatsapp,
-    color: 'green',
-  },
-];
-
 const Contact = () => {
+  const {
+    data: {
+      links: { contacts, socials },
+    },
+  } = useContext(Context);
+
   return (
     <SectionContainer>
       <Stack gap={16}>
@@ -77,14 +43,14 @@ const Contact = () => {
               justify="center"
               gap={16}
             >
-              {contactLinks.map((item) => (
-                <Tooltip key={item.name} label={item.tooltip} fontSize="sm" placement="top">
-                  <a target="_blank" href={item.path} rel="noopener noreferrer">
+              {contacts.map((item) => (
+                <Tooltip key={item.name} label={item.label} fontSize="sm" placement="top">
+                  <a target="_blank" href={item.href} rel="noopener noreferrer">
                     <Heading display="flex" alignItems="center" justifyContent="center" size="3xl">
                       <Icon
                         cursor="pointer"
                         color={`${item.color}.300`}
-                        as={item.logo}
+                        as={item.icon}
                         _hover={{
                           color: `${item.color}.500`,
                         }}
@@ -106,9 +72,9 @@ const Contact = () => {
               justify="center"
               gap={16}
             >
-              {socialLinks.map((item) => (
-                <Tooltip key={item.name} placement="top" label={item.name}>
-                  <a target="_blank" href={item.path} rel="noopener noreferrer">
+              {socials.map((item) => (
+                <Tooltip key={item.name} placement="top" label={item.label}>
+                  <a target="_blank" href={item.href} rel="noopener noreferrer">
                     <Text fontSize="2xl">
                       <Icon
                         cursor="pointer"

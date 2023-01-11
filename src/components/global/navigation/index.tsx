@@ -1,14 +1,19 @@
-import { Flex, Heading, Box, Text, Button, Stack, useDisclosure, Tooltip, Icon } from '@chakra-ui/react';
+import { Flex, Heading, Box, Text, Button, Stack, useDisclosure, Tooltip, Icon, Link } from '@chakra-ui/react';
 import { Slide } from '@chakra-ui/react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useContext } from 'react';
+import { HiDocumentText } from 'react-icons/hi';
 
-import { socialLinks, contactLinks } from '../../pages/home/contact';
-import AudioPlayer from '../audio-player';
+import { Context } from '../../../context/global';
+import { ILink, ILinks } from '../../../interfaces';
 
-import Toggle from './toggle';
+import Toggle from './menu-toggle';
 
 const Navigation = () => {
+  const {
+    data: { links },
+  } = useContext(Context);
+
   const { isOpen, onToggle } = useDisclosure();
   return (
     <>
@@ -27,35 +32,51 @@ const Navigation = () => {
           align="center"
         >
           <Link href="/">
-            <Image alt="Okino boomerang logo" src="/svg/okino-logo.svg" width="43" height="47" />
+            <Image alt="Okino boomerang logo" src="/images/svg/okino-logo.svg" width="43" height="47" />
           </Link>
           <Toggle isToggled={isOpen} handleToggle={onToggle} />
         </Flex>
       </Flex>
-      <Menu isOpen={isOpen} />
+      <Menu isOpen={isOpen} links={links} />
     </>
   );
 };
 
-const Menu = ({ isOpen }: { isOpen: boolean }) => {
+const Menu = ({ isOpen, links }: { isOpen: boolean; links: ILinks }) => {
   return (
     <Slide direction="left" in={isOpen} style={{ zIndex: 3 }}>
       <Box py={44} px={{ base: 8, md: 10, lg: 16, xl: 52 }} height="100vh" color="white" bg="#0a0a0a" borderRight="5px">
         <Flex justify="space-between" direction={{ base: 'column', lg: 'row' }} gap={16}>
-          <Stack gap={4} align="start" order={{ base: 3, lg: 1 }}>
+          <Stack gap={3} align="start" order={{ base: 3, lg: 1 }} flex="1">
             <Text
               color="gray.500"
-              fontWeight="semibold"
+              fontWeight="bold"
               fontFamily={`'Azeret Mono', monospace`}
               textTransform="uppercase"
+              fontSize={{ base: 'xs', lg: 'sm' }}
             >
               Explore
             </Text>
-            <Flex align="center" justify="center" gap={{ base: 8, lg: 16 }}>
-              {socialLinks.map((item) => (
-                <Tooltip key={item.name} label={`Visit ${item.name}`}>
-                  <Link href={item.path} passHref>
-                    <Text fontSize="5xl">
+            <Flex direction="column" justify="center" gap={{ base: 2, lg: 4 }} width="100%">
+              {links.socials.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  _hover={{
+                    textDecoration: 'none',
+                  }}
+                  isExternal
+                >
+                  <Flex
+                    width="100%"
+                    p={4}
+                    borderRadius="lg"
+                    border="1px"
+                    borderColor="gray.800"
+                    bg="gray.900"
+                    _hover={{ bg: 'gray.800' }}
+                  >
+                    <Flex padding={0} margin={0} align="center" gap={2}>
                       <Icon
                         cursor="pointer"
                         as={item.icon}
@@ -64,55 +85,121 @@ const Menu = ({ isOpen }: { isOpen: boolean }) => {
                           color: `${item.color}.500`,
                         }}
                       />
-                    </Text>
-                  </Link>
-                </Tooltip>
+                      <Text
+                        margin={0}
+                        padding={0}
+                        lineHeight="20px"
+                        color="gray.400"
+                        textTransform="uppercase"
+                        fontSize="xs"
+                        fontWeight="bold"
+                      >
+                        {item.name}
+                      </Text>
+                    </Flex>
+                  </Flex>
+                </Link>
               ))}
             </Flex>
           </Stack>
 
-          <Stack gap={4} align="start" order={2}>
+          <Stack gap={3} align="start" order={2} flex="1">
             <Text
               color="gray.500"
-              fontWeight="semibold"
+              fontWeight="bold"
               fontFamily={`'Azeret Mono', monospace`}
               textTransform="uppercase"
+              fontSize={{ base: 'xs', lg: 'sm' }}
             >
               Contact
             </Text>
-            <Flex align="center" justify="center" gap={{ base: 8, lg: 16 }}>
-              {contactLinks.map((item) => (
-                <Tooltip key={item.name} label={`Visit ${item.name}`}>
-                  <Link href={item.path} passHref>
-                    <Text fontSize="6xl">
+            <Flex direction="column" gap={{ base: 2, lg: 4 }} width="100%">
+              {links.contacts.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  _hover={{
+                    textDecoration: 'none',
+                  }}
+                >
+                  <Flex
+                    width="100%"
+                    p={4}
+                    borderRadius="lg"
+                    border="1px"
+                    borderColor="gray.800"
+                    bg="gray.900"
+                    _hover={{ bg: 'gray.800' }}
+                  >
+                    <Flex padding={0} margin={0} align="center" gap={2}>
                       <Icon
                         cursor="pointer"
-                        as={item.logo}
+                        as={item.icon}
                         color={`${item.color}.300`}
                         _hover={{
                           color: `${item.color}.500`,
                         }}
                       />
-                    </Text>
-                  </Link>
-                </Tooltip>
+                      <Text
+                        margin={0}
+                        padding={0}
+                        lineHeight="20px"
+                        color="gray.400"
+                        textTransform="uppercase"
+                        fontSize="xs"
+                        fontWeight="bold"
+                      >
+                        {item.label}
+                      </Text>
+                    </Flex>
+                  </Flex>
+                </Link>
               ))}
             </Flex>
           </Stack>
 
-          <Stack gap={4} align="start" order={{ base: 1, lg: 3 }}>
+          <Stack gap={3} align="start" order={{ base: 1, lg: 3 }} flex="1">
             <Text
               color="gray.500"
-              fontWeight="semibold"
+              fontWeight="bold"
               fontFamily={`'Azeret Mono', monospace`}
               textTransform="uppercase"
+              fontSize={{ base: 'xs', lg: 'sm' }}
             >
               Check out
             </Text>
-            <Flex align="center" justify="center" gap={{ base: 8, lg: 16 }}>
-              <Button py={6} size="lg" bgGradient="linear(to-r, #cf59e6, #6bc5f8)" color="gray.900">
-                My Resume
-              </Button>
+            <Flex width="100%" direction="column" justify="center">
+              <Link
+                href="/"
+                _hover={{
+                  textDecoration: 'none',
+                }}
+              >
+                <Flex
+                  width="100%"
+                  p={4}
+                  borderRadius="lg"
+                  border="1px"
+                  borderColor="gray.800"
+                  bg="gray.900"
+                  _hover={{ bg: 'gray.800' }}
+                >
+                  <Flex padding={0} margin={0} align="center" width="100%" gap={2}>
+                    <Icon cursor="pointer" as={HiDocumentText} color="gray.300" />
+                    <Text
+                      margin={0}
+                      padding={0}
+                      lineHeight="20px"
+                      color="gray.400"
+                      textTransform="uppercase"
+                      fontSize="xs"
+                      fontWeight="bold"
+                    >
+                      My Resume
+                    </Text>
+                  </Flex>
+                </Flex>
+              </Link>
             </Flex>
           </Stack>
         </Flex>

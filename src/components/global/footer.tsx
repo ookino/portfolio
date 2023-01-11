@@ -18,7 +18,7 @@ const Footer = () => {
     >
       <Box display={{ base: 'none', lg: 'block' }}>
         <Link href="/">
-          <Image alt="Okino boomerang logo" src="/svg/okino-logo-gradient.svg" width="43" height="47" />
+          <Image alt="Okino boomerang logo" src="/images/svg/okino-logo-gradient.svg" width="43" height="47" />
         </Link>
       </Box>
 

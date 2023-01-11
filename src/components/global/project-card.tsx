@@ -1,15 +1,7 @@
-import { Stack, Box, Heading, Text, SimpleGrid, Flex, Divider } from '@chakra-ui/react';
+import { Stack, Box, Heading, Text, SimpleGrid, Flex, Divider, Tooltip } from '@chakra-ui/react';
 import Image from 'next/image';
 
-export interface IProject {
-  stack: Array<string>;
-  title: string;
-  description: string;
-  logo: string;
-  bg?: string;
-  bgGradient?: string;
-  status: 'under-construction' | 'live' | 'down';
-}
+import { IProject } from '../../interfaces';
 
 const ProjectCard = ({ stack, title, logo, description, bg, bgGradient, status }: IProject) => {
   return (
@@ -33,24 +25,20 @@ const ProjectCard = ({ stack, title, logo, description, bg, bgGradient, status }
         color="white"
         width="full"
       >
-        <Flex
-          py={{ base: 1, lg: 3 }}
-          px={{ base: 2, lg: 4 }}
-          borderRadius="full"
-          bg="gray.800"
-          position="absolute"
-          top={{ base: 2, lg: 4 }}
-          right={{ lg: 4 }}
-        >
-          <Text
-            fontWeight={{ base: 'medium', lg: 'bold' }}
-            fontSize={{ base: 'xx-small', lg: 'xs' }}
-            fontFamily={`'Azeret Mono', monospace`}
-            textTransform="uppercase"
-          >
-            {status === 'under-construction' ? '🚧' : status === 'down' ? '🚫' : '🟢'}
-          </Text>
-        </Flex>
+        <Tooltip label={'Project is ' + status} size="sm">
+          <Box position="absolute" top={6} right={6}>
+            <Flex width="9" height="9" borderRadius="50%" bg="gray.800" align="center" justify="center">
+              <Text
+                fontWeight={{ base: 'medium', lg: 'bold' }}
+                fontSize={{ base: 'xx-small', lg: 'xs' }}
+                fontFamily={`'Azeret Mono', monospace`}
+                textTransform="uppercase"
+              >
+                {status === 'under-construction' ? '🚧' : status === 'down' ? '🚫' : '🟢'}
+              </Text>
+            </Flex>
+          </Box>
+        </Tooltip>
         <Flex
           p={{ base: 2, lg: 4 }}
           borderRadius="lg"

@@ -31,7 +31,7 @@ const AudioPlayer = () => {
         position="fixed"
         bottom={{ base: 6, lg: 8 }}
         left={{ base: 4, lg: 8 }}
-        zIndex={50}
+        zIndex={1}
       >
         <Switch
           onChange={togglePlay}

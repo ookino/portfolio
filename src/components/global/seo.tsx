@@ -5,7 +5,7 @@ const SEO = () => (
   <NextSeo
     title="Okino"
     titleTemplate="Yaseer Okino"
-    defaultTitle="Yaseer Okino"
+    defaultTitle="Yaseer Okino - Developer & Designer"
     description="Software Engineer, Designer, and UI enthusiast with a passion for crafting scalable digital products with intuitive,
     aesthetically pleasing user experiences. With experience in languages such as Python, and JavaScript, I am always
     eager to learn and explore new technologies. I am also available for collaboration on projects that align with my
@@ -20,16 +20,16 @@ const SEO = () => (
         'Software Engineer, Designer, and UI enthusiast with a passion for crafting scalable digital products and intuitive, aesthetically pleasing user experiences',
       images: [
         {
-          url: '',
+          url: '/images/og/og-1200.webp',
           width: 1200,
           height: 630,
-          alt: '',
+          alt: 'Open graph image 1200',
         },
         {
-          url: '',
+          url: '/images/og/og-500.webp',
           width: 500,
           height: 500,
-          alt: '',
+          alt: 'Open graph image 500',
         },
       ],
     }}
@@ -39,10 +39,10 @@ const SEO = () => (
       handle: '@yaseerokino',
     }}
     additionalLinkTags={[
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicon-16x16.png' },
       { rel: 'manifest', href: '/site.webmanifest' },
       { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' },
     ]}

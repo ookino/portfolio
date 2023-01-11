@@ -18,79 +18,15 @@ import {
   AccordionIcon,
   Tooltip,
 } from '@chakra-ui/react';
-import {
-  SiJavascript,
-  SiTypescript,
-  SiReact,
-  SiNodedotjs,
-  SiRuby,
-  SiRubyonrails,
-  SiNextdotjs,
-  SiNestjs,
-  SiPython,
-  SiMongodb,
-  SiPostgresql,
-} from 'react-icons/si';
+import { useContext } from 'react';
 
+import { Context } from '../../../context/global';
 import SectionContainer from '../../global/section-container';
 
-const aboutEmojis = ['💡', '💻', '🎨', '📚', '🤓', '🔍'];
-const myStack = [
-  { icon: SiJavascript, color: '#E3D04C', label: 'Javascript' },
-  { icon: SiPython, color: '#356FA1', label: 'Python' },
-  { icon: SiRuby, color: '#cc342d', label: 'Ruby' },
-  { icon: SiTypescript, color: '#2e72bb', label: 'Typescript' },
-  { icon: SiNodedotjs, color: '#61995e', label: 'Node Js' },
-  { icon: SiRubyonrails, color: '#D30002', label: 'Ruby on Rails' },
-  { icon: SiReact, color: '#01d1f2', label: 'React' },
-  { icon: SiNestjs, color: '#de2641', label: 'Nest Js' },
-  { icon: SiNextdotjs, color: 'gray.50', label: 'Next Js' },
-  { icon: SiMongodb, color: '#569035', label: 'Mongo Db' },
-  { icon: SiPostgresql, color: '#306289', label: 'Postgres' },
-];
-export const education = [
-  {
-    qualification: `Remote Full Stack Web Development Program`,
-    university: 'Microverse',
-    date: 'July 2021 – June 2022',
-    grade: null,
-    description: `Spent 1300+ hours mastering algorithms, data structures, and full-stack development while simultaneously developing projects with Ruby, Rails, JavaScript, React, and Redux. Additionally,  Developed skills in remote pair-programming using GitHub, industry-standard git-flow, and daily standups to communicate and collaborate with international remote developers. `,
-  },
-  {
-    qualification: `Bachelor of Science - BSc, Computer Science (Systems
-      Engineering)`,
-    university: 'Middlesex University',
-    date: 'October 2018 – July 2021',
-    grade: 'First Class Honours',
-    description: `For my final project titled "Developing Web-Based Selling Platform
-              for Small and Medium-Sized Enterprises in Mauritius. The project
-              covers a literature review on how the adoption of an online web
-              selling application can aid SMEs (especially start-up SMEs) sell
-              their products online and the design, development and evaluation
-              of an web-based multi-vendor eCommerce application.`,
-  },
-];
-
-export const experience = [
-  {
-    role: `Mentor - Volunteer`,
-    company: 'Microverse',
-    date: 'August 2021 – Present',
-    description: `Mentored junior web developers by providing technical support through code reviews
-    proposed improvements to code organization to improve code quality and overall performance and
-    provided advice and tips on how to maintain motivation to maintain longevity in the program.
-    `,
-  },
-  {
-    role: `Full Stack Web Development`,
-    company: 'Highlighted personal projects',
-    date: 'July 2021 – Present',
-    description: `Mastered intermediate and advanced topics in full-stack development (including Rails, Git, and DS&A challenges) while building multiple full-stack projects [SEE Works page] both independently and via pair-programming.
-    `,
-  },
-];
-
 const About = () => {
+  const {
+    data: { aboutEmojis, education, experience, stack },
+  } = useContext(Context);
   return (
     <SectionContainer>
       <Stack gap={{ base: 8, lg: 16 }}>
@@ -107,8 +43,8 @@ const About = () => {
           <Flex
             borderRadius="xl"
             flex="1"
-            padding={6}
-            bgGradient="linear(to-br, rgba(17, 17, 17, 0.5), rgba(38, 38, 38, 0.5),)"
+            padding={{ md: 6 }}
+            bgGradient={{ md: 'linear(to-br, rgba(17, 17, 17, 0.5), rgba(38, 38, 38, 0.5),)' }}
           >
             <Text color="gray.300" fontSize={{ base: 'md', lg: 'xl' }} lineHeight={1.9} textAlign="justify">
               I am a passionate Software Engineer with a focus on developing user-friendly interfaces and experiences.
@@ -162,7 +98,7 @@ const About = () => {
               My Stack
             </Text>
             <SimpleGrid columns={3} spacing={16} width="100%" height="100%">
-              {myStack.map((item) => (
+              {stack.map((item) => (
                 <Tooltip key={item.color} label={item.label} placement="top">
                   <Heading display="flex" alignItems="center" justifyContent="center" size={{ base: '2xl', lg: '3xl' }}>
                     <Icon color={item.color} as={item.icon} />

@@ -1,49 +1,15 @@
 import { Stack, Box, Heading, Text, SimpleGrid, Flex, Divider } from '@chakra-ui/react';
+import { useContext } from 'react';
 
-import ProjectCard, { IProject } from '../../global/project-card';
+import { Context } from '../../../context/global';
+import ProjectCard from '../../global/project-card';
 import SectionContainer from '../../global/section-container';
 
-const projects: IProject[] = [
-  {
-    stack: ['next js', 'chakra ui', 'zoho api', 'typescript'],
-    title: 'Scrubs & Brushes',
-    description:
-      'Cleaning service website featuring a landing page detailing key information about the business and automatic price estimator and booking system. The user-friendly website allows potential customers to easily determine the cost of their cleaning service and schedule an inspection of the customers',
-    logo: '/images/projects/sb.webp',
-    bg: 'green.600',
-    status: 'live',
-  },
-  {
-    stack: ['next js', 'trpc.io', 'mongo db', 'chakra ui', 'typescript'],
-    title: 'Rentar',
-    description:
-      'Cleaning service website featuring a landing page detailing key information about the business and automatic price estimator and booking system. The user-friendly website allows potential customers to easily determine the cost of their cleaning service and schedule an inspection of the customers',
-    logo: '/images/projects/rentar.webp',
-    bg: 'gray.50',
-    status: 'under-construction',
-  },
-  {
-    stack: ['next js', 'chakra ui', 'typescript'],
-    title: 'Portfolio',
-    description:
-      'Cleaning service website featuring a landing page detailing key information about the business and automatic price estimator and booking system. The user-friendly website allows potential customers to easily determine the cost of their cleaning service and schedule an inspection of the customers',
-    logo: '/images/projects/okino.webp',
-    bg: 'gray.600',
-    bgGradient: 'linear(to-b,  #cf59e6, #6bc5f8,)',
-    status: 'live',
-  },
-  {
-    stack: ['nest js', 'next js', 'mongo db', 'typescript'],
-    title: 'Mart',
-    description:
-      'Cleaning service website featuring a landing page detailing key information about the business and automatic price estimator and booking system. The user-friendly website allows potential customers to easily determine the cost of their cleaning service and schedule an inspection of the customers',
-    logo: '/images/projects/mart.webp',
-    bg: 'orange.600',
-    status: 'down',
-  },
-];
-
 const Projects = () => {
+  const {
+    data: { projects },
+  } = useContext(Context);
+
   return (
     <SectionContainer>
       <Stack gap={{ base: 8, lg: 16 }}>
