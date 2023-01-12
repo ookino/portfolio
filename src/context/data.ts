@@ -1,3 +1,4 @@
+import { HiOutlineExternalLink } from 'react-icons/hi';
 import { IoMail, IoLogoWhatsapp } from 'react-icons/io5';
 import {
   SiJavascript,
@@ -28,12 +29,13 @@ export const data: IData = {
       logo: '/images/assets/sb.webp',
       bg: 'green.600',
       status: 'live',
+      links: [{ label: 'live', link: 'https://scrubsandbrushes.com', icon: HiOutlineExternalLink }],
     },
     {
       stack: ['next js', 'trpc.io', 'mongo db', 'chakra ui', 'typescript'],
       title: 'Rentar',
       description:
-        'Cleaning service website featuring a landing page detailing key information about the business and automatic price estimator and booking system. The user-friendly website allows potential customers to easily determine the cost of their cleaning service and schedule an inspection of the customers',
+        'Web-based application which allows for managing vehicle rentals and includes features such as reservation management, vehicle inventory tracking, and customer management. The platform enables customers to easily reserve vehicles and rental companies to efficiently manage their fleet and operations.',
       logo: '/images/assets/rentar.webp',
       bg: 'gray.50',
       status: 'under-construction',
@@ -42,17 +44,18 @@ export const data: IData = {
       stack: ['next js', 'chakra ui', 'typescript'],
       title: 'Portfolio',
       description:
-        'Cleaning service website featuring a landing page detailing key information about the business and automatic price estimator and booking system. The user-friendly website allows potential customers to easily determine the cost of their cleaning service and schedule an inspection of the customers',
+        'My personal portfolio showcases my skills and experience in web development. The website features a clean and modern design, easy navigation, and highlights the projects I have worked on',
       logo: '/images/assets/okino.webp',
       bg: 'gray.600',
       bgGradient: 'linear(to-b,  #cf59e6, #6bc5f8,)',
       status: 'live',
+      links: [{ label: 'live', link: 'https://okino.dev', icon: HiOutlineExternalLink }],
     },
     {
       stack: ['nest js', 'next js', 'mongo db', 'typescript'],
       title: 'Mart',
       description:
-        'Cleaning service website featuring a landing page detailing key information about the business and automatic price estimator and booking system. The user-friendly website allows potential customers to easily determine the cost of their cleaning service and schedule an inspection of the customers',
+        'E-commerce web-application to aid small and medium-sized product-based businesses to sell their products online. The multivendor platform allows multiple vendors to create their own store and manage their products, orders, and transactions seamlessly.',
       logo: '/images/assets/mart.webp',
       bg: 'orange.600',
       status: 'down',
@@ -102,17 +105,25 @@ export const data: IData = {
       role: `Mentor - Volunteer`,
       company: 'Microverse',
       date: 'August 2021 – Present',
-      description: `Mentored junior web developers by providing technical support through code reviews
+      description: [
+        `Mentored junior web developers by providing technical support through code reviews
       proposed improvements to code organization to improve code quality and overall performance and
       provided advice and tips on how to maintain motivation to maintain longevity in the program.
       `,
+      ],
     },
     {
-      role: `Full Stack Web Development`,
-      company: 'Highlighted personal projects',
-      date: 'July 2021 – Present',
-      description: `Mastered intermediate and advanced topics in full-stack development (including Rails, Git, and DS&A challenges) while building multiple full-stack projects [SEE Works page] both independently and via pair-programming.
+      role: `Software Development Intern`,
+      company: 'National Information Technology Development Agency',
+      date: 'March 2022 – March 2023',
+      description: [
+        `Developed a utility web application for generating bi-weekly awareness posters on new technological
+      trends and also advisories on security vulnerabilities for software and any applicable technological service
+      to minimize the time taken to create them using graphical software.
+
       `,
+        `Supported in evaluation and testing of client applications for security vulnerabilities and system usability.`,
+      ],
     },
   ],
   links: {

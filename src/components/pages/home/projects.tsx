@@ -33,6 +33,7 @@ const Projects = () => {
               bg={item.bg}
               bgGradient={item.bgGradient}
               status={item.status}
+              links={item.links}
             />
           ))}
         </SimpleGrid>

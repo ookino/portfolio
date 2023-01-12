@@ -8,6 +8,12 @@ export interface IProject {
   bg?: string;
   bgGradient?: string;
   status: 'under-construction' | 'live' | 'down';
+  github?: string;
+  links?: Array<{
+    label: string;
+    link: string;
+    icon: IconType;
+  }>;
 }
 
 export interface IStack {
@@ -28,7 +34,7 @@ export interface IExperience {
   role: string;
   company: string;
   date: string;
-  description: string;
+  description: string[];
 }
 
 export interface ILink {

@@ -44,8 +44,17 @@ const Navigation = () => {
 
 const Menu = ({ isOpen, links }: { isOpen: boolean; links: ILinks }) => {
   return (
-    <Slide direction="left" in={isOpen} style={{ zIndex: 3 }}>
-      <Box py={44} px={{ base: 8, md: 10, lg: 16, xl: 52 }} height="100vh" color="white" bg="#0a0a0a" borderRight="5px">
+    <Slide direction="left" in={isOpen} style={{ zIndex: 3, transition: 'all 0.5s ease-out' }}>
+      <Box
+        py={44}
+        px={{ base: 8, md: 10, lg: 16, xl: 52 }}
+        height="100vh"
+        color="white"
+        bg="#0a0a0a"
+        borderRight="5px"
+        borderColor="red"
+        overflow="visible"
+      >
         <Flex justify="space-between" direction={{ base: 'column', lg: 'row' }} gap={16}>
           <Stack gap={3} align="start" order={{ base: 3, lg: 1 }} flex="1">
             <Text
@@ -170,10 +179,11 @@ const Menu = ({ isOpen, links }: { isOpen: boolean; links: ILinks }) => {
             </Text>
             <Flex width="100%" direction="column" justify="center">
               <Link
-                href="/"
+                href="https://okino-public.s3.eu-west-2.amazonaws.com/resume.pdf"
                 _hover={{
                   textDecoration: 'none',
                 }}
+                isExternal
               >
                 <Flex
                   width="100%"

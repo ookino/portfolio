@@ -1,9 +1,9 @@
-import { Stack, Box, Heading, Text, SimpleGrid, Flex, Divider, Tooltip } from '@chakra-ui/react';
+import { Stack, Box, Heading, Text, Flex, Icon, Tooltip, Link } from '@chakra-ui/react';
 import Image from 'next/image';
 
 import { IProject } from '../../interfaces';
 
-const ProjectCard = ({ stack, title, logo, description, bg, bgGradient, status }: IProject) => {
+const ProjectCard = ({ stack, title, logo, description, bg, bgGradient, status, links }: IProject) => {
   return (
     <Flex
       pb={{ base: 4, lg: 8 }}
@@ -65,9 +65,26 @@ const ProjectCard = ({ stack, title, logo, description, bg, bgGradient, status }
           <Heading fontWeight="bold" size={{ base: 'sm', lg: 'md' }} color="gray.200">
             {title}
           </Heading>
+
+          <Flex>
+            {links?.map((item) => (
+              <Tooltip key={item.label} label={item.label + ' Link'} textTransform="capitalize">
+                <Link href={item.link} isExternal>
+                  <Icon
+                    as={item.icon}
+                    color="gray.500"
+                    fontSize="lg"
+                    _hover={{
+                      color: 'gray.300',
+                    }}
+                  />
+                </Link>
+              </Tooltip>
+            ))}
+          </Flex>
         </Flex>
 
-        <Text fontSize={{ base: 'sm', lg: 'md' }} color="gray.300" lineHeight="1.8">
+        <Text fontSize={{ base: 'sm', lg: 'md' }} color="gray.300" lineHeight="1.8" textAlign="justify">
           {description}
         </Text>
       </Stack>

@@ -17,6 +17,8 @@ import {
   AccordionPanel,
   AccordionIcon,
   Tooltip,
+  UnorderedList,
+  ListItem,
 } from '@chakra-ui/react';
 import { useContext } from 'react';
 
@@ -167,9 +169,11 @@ const About = () => {
                           </AccordionButton>
                         </h2>
                         <AccordionPanel pb={4}>
-                          <Text color="gray.400" lineHeight={1.8}>
-                            {item.description}
-                          </Text>
+                          <UnorderedList color="gray.400" spacing={3}>
+                            {item.description.map((item) => (
+                              <ListItem key={item}>{item}</ListItem>
+                            ))}
+                          </UnorderedList>
                         </AccordionPanel>
                       </AccordionItem>
                     ))}
