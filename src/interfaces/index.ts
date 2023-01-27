@@ -1,13 +1,16 @@
 import { IconType } from 'react-icons';
 
 export interface IProject {
-  stack: Array<string>;
+  tools: Array<{
+    tool: IconType;
+    color: string;
+  }>;
+  colorScheme: Array<string>;
   title: string;
   description: string;
   logo: string;
   bg?: string;
   bgGradient?: string;
-  status: 'under-construction' | 'live' | 'down';
   github?: string;
   links?: Array<{
     label: string;
