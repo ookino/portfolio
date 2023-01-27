@@ -3,7 +3,6 @@ import { IoMail, IoLogoWhatsapp } from 'react-icons/io5';
 import {
   SiJavascript,
   SiTypescript,
-  SiReact,
   SiNodedotjs,
   SiRuby,
   SiRubyonrails,
@@ -15,50 +14,40 @@ import {
   SiGithub,
   SiLinkedin,
   SiInstagram,
+  SiRedux,
+  SiChakraui,
+  SiReact,
+  SiZoho,
 } from 'react-icons/si';
 
-import { IData } from './../interfaces';
+import { IData } from '@/interfaces';
 
 export const data: IData = {
   projects: [
     {
-      stack: ['next js', 'chakra ui', 'zoho api', 'typescript'],
+      tools: [
+        { tool: SiNextdotjs, color: 'gray.300' },
+        { tool: SiChakraui, color: 'teal' },
+        { tool: SiZoho, color: 'blue.500' },
+      ],
       title: 'Scrubs & Brushes',
-      description:
-        'Cleaning service website featuring a landing page detailing key information about the business and automatic price estimator and booking system. The user-friendly website allows potential customers to easily determine the cost of their cleaning service and schedule an inspection of the customers',
+      colorScheme: ['#2F855A', '#F8F9FA', '#212529'],
+      description: 'Cleaning service landing page and cost estimator',
       logo: '/images/assets/sb.webp',
-      bg: 'green.600',
-      status: 'live',
       links: [{ label: 'live', link: 'https://scrubsandbrushes.com', icon: HiOutlineExternalLink }],
     },
+
     {
-      stack: ['next js', 'trpc.io', 'mongo db', 'chakra ui', 'typescript'],
-      title: 'Rentar',
-      description:
-        'Web-based application which allows for managing vehicle rentals and includes features such as reservation management, vehicle inventory tracking, and customer management. The platform enables customers to easily reserve vehicles and rental companies to efficiently manage their fleet and operations.',
-      logo: '/images/assets/rentar.webp',
-      bg: 'gray.50',
-      status: 'under-construction',
-    },
-    {
-      stack: ['next js', 'chakra ui', 'typescript'],
+      tools: [
+        { tool: SiNextdotjs, color: 'gray.300' },
+        { tool: SiChakraui, color: 'teal' },
+      ],
       title: 'Portfolio',
-      description:
-        'My personal portfolio showcases my skills and experience in web development. The website features a clean and modern design, easy navigation, and highlights the projects I have worked on',
+      colorScheme: ['gray.900', 'gray.50'],
+      description: 'My personal portfolio',
       logo: '/images/assets/okino.webp',
-      bg: 'gray.600',
       bgGradient: 'linear(to-b,  #cf59e6, #6bc5f8,)',
-      status: 'live',
-      links: [{ label: 'live', link: 'https://okino.dev', icon: HiOutlineExternalLink }],
-    },
-    {
-      stack: ['nest js', 'next js', 'mongo db', 'typescript'],
-      title: 'Mart',
-      description:
-        'E-commerce web-application to aid small and medium-sized product-based businesses to sell their products online. The multivendor platform allows multiple vendors to create their own store and manage their products, orders, and transactions seamlessly.',
-      logo: '/images/assets/mart.webp',
-      bg: 'orange.600',
-      status: 'down',
+      links: [{ label: 'live', link: '/', icon: HiOutlineExternalLink }],
     },
   ],
 

@@ -1,12 +1,12 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { createContext, useMemo, useState } from 'react';
 
-import Fonts from '../components/global/fonts';
-import Seo from '../components/global/seo';
-import { IContext } from '../interfaces';
-
 import { data } from './data';
 import { theme } from './theme';
+
+import Fonts from '@/components/common/fonts';
+import Seo from '@/components/common/seo';
+import { IContext } from '@/interfaces';
 
 const Context = createContext<IContext>({
   data,

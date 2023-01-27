@@ -23,7 +23,7 @@ const Layout = ({ children }: ILayout) => {
   return (
     <Box>
       <Navigation />
-      {/* <AudioPlayer /> */}
+      <AudioPlayer />
       <Box px={8} py={32} zIndex={1}>
         {children}
       </Box>

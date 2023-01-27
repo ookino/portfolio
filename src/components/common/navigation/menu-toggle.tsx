@@ -1,5 +1,4 @@
-import { Box } from '@chakra-ui/react';
-import { SyntheticEvent, useState } from 'react';
+import { Box, useTheme } from '@chakra-ui/react';
 
 interface IToggle {
   isToggled: boolean;
@@ -7,6 +6,8 @@ interface IToggle {
 }
 
 const Toggle = ({ isToggled, handleToggle }: IToggle) => {
+  const theme = useTheme();
+
   const color = 'white';
   const duration = 0.4;
   const easing = 'cubic-bezier(0, 0, 0, 1)';
@@ -25,15 +26,7 @@ const Toggle = ({ isToggled, handleToggle }: IToggle) => {
   const topOffset = Math.round((area - height) / 2);
 
   return (
-    <Box
-      cursor="pointer"
-      height="48px"
-      position="relative"
-      width="48px"
-      tabIndex={0}
-      onKeyUp={(e) => e.key === 'Enter' && handleToggle}
-      onClick={handleToggle}
-    >
+    <Box cursor="pointer" height="48px" position="relative" width="48px" tabIndex={0} onClick={handleToggle}>
       <Box
         data-testid="bar-wrap-one"
         transition={`${0.4 / 2}s cubic-bezier(0, 0, 0, 1) ${isToggled ? '0s' : `${0.4 / 2}s`}`}

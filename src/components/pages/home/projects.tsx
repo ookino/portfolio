@@ -1,9 +1,10 @@
 import { Stack, Box, Heading, Text, SimpleGrid, Flex, Divider } from '@chakra-ui/react';
 import { useContext } from 'react';
 
-import { Context } from '../../../context/global';
-import ProjectCard from '../../global/project-card';
-import SectionContainer from '../../global/section-container';
+import ProjectCard from '../../common/project-card';
+import SectionContainer from '../../common/section-container';
+
+import { Context } from '@/context/global';
 
 const Projects = () => {
   const {
@@ -22,19 +23,9 @@ const Projects = () => {
           </Text>
         </Box>
 
-        <SimpleGrid spacing={{ base: 8, lg: 16 }} columns={{ base: 1, lg: 2 }}>
+        <SimpleGrid spacing={{ base: 8, lg: 8 }} columns={{ base: 1, lg: 1 }}>
           {projects.map((item) => (
-            <ProjectCard
-              key={item.title}
-              stack={item.stack}
-              title={item.title}
-              logo={item.logo}
-              description={item.description}
-              bg={item.bg}
-              bgGradient={item.bgGradient}
-              status={item.status}
-              links={item.links}
-            />
+            <ProjectCard key={item.title} {...item} />
           ))}
         </SimpleGrid>
       </Stack>

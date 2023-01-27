@@ -1,22 +1,27 @@
-import { Flex, Heading, Box, Text, Button, Stack, useDisclosure, Tooltip, Icon, Link } from '@chakra-ui/react';
+import { Flex, Box, Text, Stack, useDisclosure, Icon, Link, useMediaQuery, useTheme } from '@chakra-ui/react';
 import { Slide } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useContext } from 'react';
 import { HiDocumentText } from 'react-icons/hi';
 
-import { Context } from '../../../context/global';
-import { ILink, ILinks } from '../../../interfaces';
-
 import Toggle from './menu-toggle';
+
+import { Context } from '@/context/global';
+import { ILinks } from '@/interfaces';
 
 const Navigation = () => {
   const {
     data: { links },
   } = useContext(Context);
 
+  const [large] = useMediaQuery('(min-width: 800px)');
+
   const { isOpen, onToggle } = useDisclosure();
+
+  const theme = useTheme();
   return (
     <>
+      <div />
       <Flex as="nav" width="100%" position="fixed" py={6} px={{ base: 5, md: 8, lg: 16, xl: 48 }} zIndex={4}>
         <Flex
           px={8}
@@ -32,7 +37,14 @@ const Navigation = () => {
           align="center"
         >
           <Link href="/">
-            <Image alt="Okino boomerang logo" src="/images/svg/okino-logo.svg" width="43" height="47" />
+            <Box>
+              <Image
+                alt="Okino boomerang logo"
+                src="/images/svg/okino-logo.svg"
+                width={large ? '43' : '33'}
+                height={large ? '47' : '37'}
+              />
+            </Box>
           </Link>
           <Toggle isToggled={isOpen} handleToggle={onToggle} />
         </Flex>
@@ -53,7 +65,7 @@ const Menu = ({ isOpen, links }: { isOpen: boolean; links: ILinks }) => {
         bg="#0a0a0a"
         borderRight="5px"
         borderColor="red"
-        overflow="visible"
+        overflow="scroll"
       >
         <Flex justify="space-between" direction={{ base: 'column', lg: 'row' }} gap={16}>
           <Stack gap={3} align="start" order={{ base: 3, lg: 1 }} flex="1">

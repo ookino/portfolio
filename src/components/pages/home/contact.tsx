@@ -1,8 +1,9 @@
-import { Stack, Box, Heading, Text, Flex, Icon, Tooltip } from '@chakra-ui/react';
+import { Stack, Box, Heading, Text, Flex, Icon, Tooltip, Link } from '@chakra-ui/react';
 import { useContext } from 'react';
 
-import { Context } from '../../../context/global';
-import SectionContainer from '../../global/section-container';
+import SectionContainer from '../../common/section-container';
+
+import { Context } from '@/context/global';
 
 const Contact = () => {
   const {
@@ -15,19 +16,17 @@ const Contact = () => {
     <SectionContainer>
       <Stack gap={16}>
         <Box>
-          <Heading bgClip="text" bgGradient="linear(to-br, gray.50, gray.400)">
-            get in touch
-          </Heading>
+          <Heading size={{ base: 'lg', lg: 'xl' }}>get in touch</Heading>
           <Text color="gray.500" fontWeight="medium">
             have an idea, lets make it happen
           </Text>
         </Box>
-        <Flex gap={{ base: 8, lg: 16 }} align="center" direction={{ base: 'column', lg: 'row' }}>
+        <Flex gap={{ base: 8, lg: 16 }} direction={{ base: 'column', lg: 'row' }}>
           <Text
             flex={1}
             color="gray.300"
-            fontSize={{ base: 'lg', lg: '2xl' }}
-            lineHeight={{ base: 1.6, lg: 1.9 }}
+            fontSize={{ base: 'md', lg: 'xl' }}
+            lineHeight={{ base: 1.6, lg: 2 }}
             textAlign="justify"
           >
             Thank you 🙏 for going through my portfolio! If you have any questions, comments, or would like to get in
@@ -35,43 +34,56 @@ const Contact = () => {
             collaborations, so don&apos;t hesitate to get in touch. I look forward to hearing from you!
           </Text>
 
-          <Stack flex={{ base: '1', lg: 0.5 }} gap={4} width={{ base: '100%', lg: 'unset' }}>
-            <Flex
-              width={{ base: '100%' }}
-              borderRadius="xl"
-              background="rgba(38, 38, 38, 0.5)"
-              backdropFilter="auto"
-              backdropBlur="30px"
-              padding={8}
-              border="1px"
-              borderColor="gray.800"
-              align="center"
-              justify="center"
-              gap={16}
-            >
+          <Stack flex={{ base: '1', lg: 0.5 }} gap={1} width={{ base: '100%', lg: 'unset' }}>
+            <Stack width={{ base: '100%' }} justify="center" gap={1}>
               {contacts.map((item) => (
-                <Tooltip key={item.name} label={item.label} fontSize="sm" placement="top">
-                  <a target="_blank" href={item.href} rel="noopener noreferrer">
-                    <Heading display="flex" alignItems="center" justifyContent="center" size="3xl">
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  _hover={{
+                    textDecoration: 'none',
+                  }}
+                >
+                  <Flex
+                    width="100%"
+                    p={4}
+                    borderRadius="xl"
+                    border="1px"
+                    borderColor="gray.800"
+                    background="rgba(10, 10, 10, 1)"
+                    _hover={{ bg: 'gray.800' }}
+                  >
+                    <Flex padding={0} margin={0} align="center" gap={2}>
                       <Icon
                         cursor="pointer"
-                        color={`${item.color}.300`}
                         as={item.icon}
+                        color={`${item.color}.300`}
                         _hover={{
                           color: `${item.color}.500`,
                         }}
                       />
-                    </Heading>
-                  </a>
-                </Tooltip>
+                      <Text
+                        margin={0}
+                        padding={0}
+                        lineHeight="20px"
+                        color="gray.400"
+                        textTransform="uppercase"
+                        fontSize="xs"
+                        fontWeight="bold"
+                      >
+                        {item.label}
+                      </Text>
+                    </Flex>
+                  </Flex>
+                </Link>
               ))}
-            </Flex>
+            </Stack>
             <Flex
               borderRadius="xl"
-              background="rgba(13, 13, 13, 0.5)"
+              background="rgba(10, 10, 10, 1)"
               backdropFilter="auto"
               backdropBlur="30px"
-              padding={4}
+              p={4}
               border="1px"
               borderColor="gray.800"
               align="center"
@@ -81,16 +93,14 @@ const Contact = () => {
               {socials.map((item) => (
                 <Tooltip key={item.name} placement="top" label={item.label}>
                   <a target="_blank" href={item.href} rel="noopener noreferrer">
-                    <Text fontSize="2xl">
-                      <Icon
-                        cursor="pointer"
-                        as={item.icon}
-                        color={`${item.color}.300`}
-                        _hover={{
-                          color: `${item.color}.500`,
-                        }}
-                      />
-                    </Text>
+                    <Icon
+                      cursor="pointer"
+                      as={item.icon}
+                      color={`${item.color}.300`}
+                      _hover={{
+                        color: `${item.color}.500`,
+                      }}
+                    />
                   </a>
                 </Tooltip>
               ))}
