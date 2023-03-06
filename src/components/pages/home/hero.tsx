@@ -15,7 +15,7 @@ const Hero = () => {
           <Box display={large ? 'none' : 'block'} as="br" />
           with intuitive user experiences
         </Heading>
-        <Box pl={{ base: 1, lg: 2 }}>
+        <Box pl={{ base: 1, lg: 2 }} lineHeight={2}>
           <Text width={{ lg: '60%' }} color="gray.300">
             Hi 👋, i&apos;m{' '}
             <Box as="span" fontWeight="bold">
