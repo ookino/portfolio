@@ -12,7 +12,7 @@ const Footer = () => {
       borderTop="1px"
       borderTopColor="gray.800"
       position="absolute"
-      bg="#111111"
+      bg="#0f0f0f"
       align="center"
       justify="space-between"
     >
