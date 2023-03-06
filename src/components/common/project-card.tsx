@@ -34,8 +34,8 @@ const ProjectCard = ({ tools, title, logo, description, bg, bgGradient, links, c
     >
       <Menu>
         <MenuButton
-          top="3"
-          right="3"
+          top={{ base: '6', lg: '8' }}
+          right={{ base: '6', lg: '8' }}
           position="absolute"
           as={IconButton}
           aria-label="Options"

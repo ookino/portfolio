@@ -42,7 +42,7 @@ const About = () => {
           </Text>
         </Box>
 
-        <Stack gap={{ base: 8, lg: 12 }}>
+        <Flex direction={{ base: 'column', lg: 'row' }} gap={{ base: 8, lg: 12 }}>
           <Flex borderRadius="xl" flex="1">
             <Text color="gray.300" lineHeight={2}>
               With over 3+ years of experience as a full stack developer and strong background in JavaScript, as well as
@@ -53,7 +53,7 @@ const About = () => {
             </Text>
           </Flex>
 
-          <SimpleGrid spacing={{ base: 8, lg: 12 }}>
+          <SimpleGrid spacing={{ base: 8, lg: 12 }} flex={1}>
             <Flex borderRadius="xl" borderColor="gray.800">
               <Tabs variant="solid-rounded" colorScheme="gray" width="100%" isFitted>
                 <TabList bg="#0a0a0a" padding={3} borderRadius="2xl">
@@ -151,7 +151,7 @@ const About = () => {
               </Tabs>
             </Flex>
           </SimpleGrid>
-        </Stack>
+        </Flex>
       </Stack>
     </SectionContainer>
   );
