@@ -16,19 +16,16 @@ const Contact = () => {
     <SectionContainer>
       <Stack gap={16}>
         <Box>
-          <Heading size={{ base: 'lg', lg: 'xl' }}>get in touch</Heading>
+          <Text fontSize="2xl" fontWeight="bold" bgClip="text" bgGradient="linear(to-br, gray.50, gray.400)">
+            get in touch
+          </Text>
           <Text color="gray.500" fontWeight="medium">
             have an idea, lets make it happen
           </Text>
         </Box>
+
         <Flex gap={{ base: 8, lg: 16 }} direction={{ base: 'column', lg: 'row' }}>
-          <Text
-            flex={1}
-            color="gray.300"
-            fontSize={{ base: 'md', lg: 'xl' }}
-            lineHeight={{ base: 1.6, lg: 2 }}
-            textAlign="justify"
-          >
+          <Text flex={1} color="gray.300" lineHeight={2}>
             Thank you 🙏 for going through my portfolio! If you have any questions, comments, or would like to get in
             touch for any reason, please feel free to reach out to me. I am always open to new opportunities and
             collaborations, so don&apos;t hesitate to get in touch. I look forward to hearing from you!

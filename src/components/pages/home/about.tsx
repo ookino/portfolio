@@ -32,39 +32,38 @@ const About = () => {
   } = useContext(Context);
   return (
     <SectionContainer>
-      <Stack gap={{ base: 8, lg: 16 }}>
+      <Stack gap={{ base: 8, lg: 12 }}>
         <Box>
-          <Heading size={{ base: 'lg', lg: 'xl' }} bgClip="text" bgGradient="linear(to-br, gray.50, gray.400)">
+          <Text fontSize="2xl" fontWeight="bold" bgClip="text" bgGradient="linear(to-br, gray.50, gray.400)">
             about
-          </Heading>
-          <Text fontSize={{ base: 'sm', lg: 'md' }} color="gray.500" fontWeight="medium">
+          </Text>
+          <Text color="gray.500" fontWeight="medium">
             my background, experience and skills
           </Text>
         </Box>
 
-        <Stack gap={{ base: 8, lg: 12 }}>
+        <Flex direction={{ base: 'column', lg: 'row' }} gap={{ base: 8, lg: 12 }}>
           <Flex borderRadius="xl" flex="1">
-            <Text color="gray.300" fontSize={{ base: 'md', lg: 'xl' }} lineHeight={2}>
-              I am Software Engineer with a focus on developing user-friendly interfaces and experiences. With over 3+
-              years of experience as a full stack developer and strong background in JavaScript, as well as proficiency
-              in Ruby and Python, I am able to bring a diverse set of skills to any project. I have a keen focus on
-              developing creative and effective solutions that solve problems, while maintaining attention to design,
-              accessibility, and well-structured code. I enjoy bringing ideas to reality and developing solutions that
-              provide excellent user experiences.
+            <Text color="gray.300" lineHeight={2}>
+              With over 3+ years of experience as a full stack developer and strong background in JavaScript, as well as
+              proficiency in Ruby and Python, I am able to bring a diverse set of skills to any project. I have a keen
+              focus on developing creative and effective solutions that solve problems, while maintaining attention to
+              design, accessibility, and well-structured code. I enjoy bringing ideas to reality and developing
+              solutions that provide excellent user experiences.
             </Text>
           </Flex>
 
-          <SimpleGrid spacing={{ base: 8, lg: 12 }}>
+          <SimpleGrid spacing={{ base: 8, lg: 12 }} flex={1}>
             <Flex borderRadius="xl" borderColor="gray.800">
               <Tabs variant="solid-rounded" colorScheme="gray" width="100%" isFitted>
                 <TabList bg="#0a0a0a" padding={3} borderRadius="2xl">
-                  <Tab borderRadius="lg" fontSize={{ base: 'xs', md: 'sm', lg: 'md' }}>
+                  <Tab borderRadius="lg" fontSize={{ base: 'xs', md: 'sm' }}>
                     STACK
                   </Tab>
-                  <Tab borderRadius="xl" py={3} fontSize={{ base: 'xs', md: 'sm', lg: 'md' }}>
+                  <Tab borderRadius="xl" py={3} fontSize={{ base: 'xs', md: 'sm' }}>
                     EDUCATION
                   </Tab>
-                  <Tab borderRadius="lg" fontSize={{ base: 'xs', md: 'sm', lg: 'md' }}>
+                  <Tab borderRadius="lg" fontSize={{ base: 'xs', md: 'sm' }}>
                     EXPERIENCE
                   </Tab>
                 </TabList>
@@ -152,7 +151,7 @@ const About = () => {
               </Tabs>
             </Flex>
           </SimpleGrid>
-        </Stack>
+        </Flex>
       </Stack>
     </SectionContainer>
   );

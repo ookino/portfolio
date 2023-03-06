@@ -15,15 +15,15 @@ const Projects = () => {
     <SectionContainer>
       <Stack gap={{ base: 8, lg: 16 }}>
         <Box>
-          <Heading size={{ base: 'lg', lg: 'xl' }} bgClip="text" bgGradient="linear(to-br, gray.50, gray.400)">
+          <Text fontSize="2xl" fontWeight="bold" bgClip="text" bgGradient="linear(to-br, gray.50, gray.400)">
             projects
-          </Heading>
-          <Text fontSize={{ base: 'sm', lg: 'md' }} color="gray.500" fontWeight="medium">
-            from ideas into functional web sites & applications
+          </Text>
+          <Text color="gray.500" fontWeight="medium">
+            ideas to functional web sites & applications
           </Text>
         </Box>
 
-        <SimpleGrid spacing={{ base: 8, lg: 8 }} columns={{ base: 1, lg: 1 }}>
+        <SimpleGrid spacing={{ base: 8, lg: 8 }} columns={{ base: 1, lg: 2 }}>
           {projects.map((item) => (
             <ProjectCard key={item.title} {...item} />
           ))}
