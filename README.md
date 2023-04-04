@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a href="https://okino.dev/">
+    <img src="https://www.okino.dev/images/svg/okino-logo-gradient.svg" alt="Okino's logo" title="Okino" align="right" height="60" />
+</a>
+
+# Portfolio V1
+
+Version one of my personal portfolio
+<br/>
+[Live Demo](https://okino.dev)
+
+![](screenshot.png)
+
+**Additional description about the project and its features.**
+
+## Built With
+
+- NextJs
+- Chakra UI
+
+## Tools
+
+The following tools help make it easier to run this code.
+
+- [Visual Studio Code](https://code.visualstudio.com/): A source code editor
+
+- [Git](https://git-scm.com/downloads): A tool for managing source code
 
 ## Getting Started
 
-First, run the development server:
+### **Prerequisites**
+
+To run this project you need [Node](https://nodejs.org/en/) and [PNPM](https://docs.npmjs.com/about-npm-versions) installed on your local machine
 
 ```bash
-npm run dev
-# or
-yarn dev
+You can use any package manager of your choice, For this project PNPM was used
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **Setup**
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+If you have installed git you can clone the code to your machine, or download a ZIP of all the files directly.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+[Download the ZIP from this location](https://github.com/yaseerokino/portfolio/archive/refs/heads/main.zip), or run the following [git](https://git-scm.com/downloads) command to clone the files to your machine:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+git clone https://github.com/yaseerokino/portfolio.git
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### **Install**
 
-## Learn More
+Once the files are downloaded or cloned on your machine, open your terminal and `cd to "portfolio" folder` and run the following commands:
 
-To learn more about Next.js, take a look at the following resources:
+**To install all dependencies**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**To build and configure webpack**
 
-## Deploy on Vercel
+```bash
+pnpm build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**To start development server**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm dev
+```
+
+## Author
+
+- GitHub: [@yaseerokino](https://github.com/yaseerokino)
+- Twitter: [@yaseerokino](https://twitter.com/yaseerokino)
+- LinkedIn: [Yaseer Okino](https://linkedin.com/in/yaseerokino)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
