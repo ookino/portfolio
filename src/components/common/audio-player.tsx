@@ -22,7 +22,7 @@ const AudioPlayer = () => {
 
   return (
     <div>
-      <audio ref={audioRef} src="/audio/interlude.mp3" loop />
+      <audio ref={audioRef} src="/audio/ctd.mp3" loop />
       <Flex
         background="rgb(13, 13, 13)"
         padding={{ base: 2, lg: 3 }}
