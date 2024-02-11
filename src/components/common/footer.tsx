@@ -24,11 +24,13 @@ const Footer = () => {
 
       <Text
         textTransform="uppercase"
-        color="gray.500"
+        color="transparent"
         fontSize="xs"
         fontWeight="semibold"
         fontFamily={`'Azeret Mono', monospace`}
-      ></Text>
+      >
+        00
+      </Text>
 
       <Link href="https://github.com/yaseerokino">
         <Text fontSize="xl">
