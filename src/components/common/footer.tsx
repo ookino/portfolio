@@ -28,9 +28,7 @@ const Footer = () => {
         fontSize="xs"
         fontWeight="semibold"
         fontFamily={`'Azeret Mono', monospace`}
-      >
-        Design & Development
-      </Text>
+      ></Text>
 
       <Link href="https://github.com/yaseerokino">
         <Text fontSize="xl">

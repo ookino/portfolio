@@ -19,7 +19,7 @@ const Provider = ({ children, ...props }: any) => {
   const memoizedData = useMemo(() => ({ data }), []);
   return (
     <Context.Provider value={memoizedData} {...props}>
-      <Seo />
+      {/* <Seo /> */}
       <ChakraProvider theme={memoizedTheme.defaultTheme}>
         <Fonts />
         {children}

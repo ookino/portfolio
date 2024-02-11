@@ -19,10 +19,10 @@ const Hero = () => {
           <Text width={{ lg: '60%' }} color="gray.300">
             Hi 👋, i&apos;m{' '}
             <Box as="span" fontWeight="bold">
-              Yaseer Okino
+              Demi Olaleye
             </Box>{' '}
-            a full-stack engineer, passionate about creating aesthetically pleasing user interfaces, as well as
-            developing reliable and scalable back-end systems.
+            An innovative marketer and branding expert fueled by a passion for product enhancement, equipped with a
+            robust blend of strategic thinking and cutting-edge industry insights.
           </Text>
         </Box>
       </Stack>

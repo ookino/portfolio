@@ -3,13 +3,10 @@ import React from 'react';
 
 const SEO = () => (
   <NextSeo
-    title="Okino"
-    titleTemplate="Yaseer Okino"
-    defaultTitle="Yaseer Okino - Developer & Designer"
-    description="Software Engineer, Designer, and UI enthusiast with a passion for crafting scalable digital products with intuitive,
-    aesthetically pleasing user experiences. With experience in languages such as Python, and JavaScript, I am always
-    eager to learn and explore new technologies. I am also available for collaboration on projects that align with my
-    skills and interests."
+    title="Demi Olaleye"
+    titleTemplate="Demi Olaleye"
+    defaultTitle="Demi Olaleye"
+    description="An innovative marketer and branding expert fueled by a passion for product enhancement, equipped with a robust blend of strategic thinking and cutting-edge industry insights."
     canonical="https://okino.dev/"
     openGraph={{
       type: 'website',

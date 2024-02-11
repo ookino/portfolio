@@ -45,11 +45,10 @@ const About = () => {
         <Flex direction={{ base: 'column', lg: 'row' }} gap={{ base: 8, lg: 12 }}>
           <Flex borderRadius="xl" flex="1">
             <Text color="gray.300" lineHeight={2}>
-              With over 3+ years of experience as a full stack developer and strong background in JavaScript, as well as
-              proficiency in Ruby and Python, I am able to bring a diverse set of skills to any project. I have a keen
-              focus on developing creative and effective solutions that solve problems, while maintaining attention to
-              design, accessibility, and well-structured code. I enjoy bringing ideas to reality and developing
-              solutions that provide excellent user experiences.
+              A Marketing and branding professional with in-depth knowledge in product management seeking to leverage
+              exemplary critical thinking skills, commercial and technological awareness, prioritization, and creativity
+              to deliver results in growth, revenue, operational performance, and profitability at a reputable
+              organization. Frequently commended for critical thinking and innovativeness.
             </Text>
           </Flex>
 

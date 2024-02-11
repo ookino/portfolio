@@ -19,7 +19,7 @@ const Projects = () => {
             projects
           </Text>
           <Text color="gray.500" fontWeight="medium">
-            ideas to functional web sites & applications
+            See how i work
           </Text>
         </Box>
 
