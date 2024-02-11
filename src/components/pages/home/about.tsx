@@ -56,9 +56,9 @@ const About = () => {
             <Flex borderRadius="xl" borderColor="gray.800">
               <Tabs variant="solid-rounded" colorScheme="gray" width="100%" isFitted>
                 <TabList bg="#0a0a0a" padding={3} borderRadius="2xl">
-                  <Tab borderRadius="lg" fontSize={{ base: 'xs', md: 'sm' }}>
+                  {/* <Tab borderRadius="lg" fontSize={{ base: 'xs', md: 'sm' }}>
                     STACK
-                  </Tab>
+                  </Tab> */}
                   <Tab borderRadius="xl" py={3} fontSize={{ base: 'xs', md: 'sm' }}>
                     EDUCATION
                   </Tab>
@@ -67,7 +67,7 @@ const About = () => {
                   </Tab>
                 </TabList>
                 <TabPanels>
-                  <TabPanel>
+                  {/* <TabPanel>
                     <Flex px={8} py={12} borderColor="gray.800" direction="column" gap={16}>
                       <SimpleGrid columns={{ base: 4, lg: 5 }} width="100%" spacing="12" height="100%">
                         {stack.map((item) => (
@@ -79,7 +79,7 @@ const About = () => {
                         ))}
                       </SimpleGrid>
                     </Flex>
-                  </TabPanel>
+                  </TabPanel> */}
                   <TabPanel>
                     <Accordion as={Stack} gap={4} py={4}>
                       {education.map((item) => (

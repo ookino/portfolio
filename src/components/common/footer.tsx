@@ -31,18 +31,6 @@ const Footer = () => {
       >
         00
       </Text>
-
-      <Link href="https://github.com/yaseerokino">
-        <Text fontSize="xl">
-          <Icon
-            as={FaGithubAlt}
-            color="gray.300"
-            _hover={{
-              color: 'gray.500',
-            }}
-          />
-        </Text>
-      </Link>
     </Flex>
   );
 };

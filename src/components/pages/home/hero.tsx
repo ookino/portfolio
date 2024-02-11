@@ -7,14 +7,7 @@ const Hero = () => {
   return (
     <SectionContainer>
       <Stack gap={{ base: 2, lg: 4 }}>
-        <Heading width={{ lg: '90%' }}>
-          crafting ideas into scalable digital{' '}
-          <Box as="span" bgClip="text" bgGradient="linear(to-r, #cf59e6, #6bc5f8)">
-            products{' '}
-          </Box>
-          <Box display={large ? 'none' : 'block'} as="br" />
-          with intuitive user experiences
-        </Heading>
+        <Heading width={{ lg: '90%' }}>Driving success with strategic innovation</Heading>
         <Box pl={{ base: 1, lg: 2 }} lineHeight={2}>
           <Text width={{ lg: '60%' }} color="gray.300">
             Hi 👋, i&apos;m{' '}
