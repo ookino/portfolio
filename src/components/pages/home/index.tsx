@@ -4,6 +4,7 @@ import About from './about';
 import Contact from './contact';
 import Hero from './hero';
 import Projects from './projects';
+import Certificates from './certificates';
 
 export const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ export const HomePage = () => {
       <Stack>
         <Hero />
         <Projects />
+        <Certificates />
         <About />
         <Divider borderColor="gray.800" />
         <Contact />

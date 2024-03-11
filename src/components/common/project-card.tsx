@@ -11,6 +11,7 @@ import {
   MenuList,
   MenuItem,
   IconButton,
+  Button,
   Link,
 } from '@chakra-ui/react';
 import { BiLink } from 'react-icons/bi';
@@ -18,7 +19,7 @@ import { BsCircleFill } from 'react-icons/bs';
 
 import { IProject } from '@/interfaces';
 
-const ProjectCard = ({ tools, title, logo, description, bg, bgGradient, links, colorScheme }: IProject) => {
+const ProjectCard = ({ title, description, bg, bgGradient, links }: IProject) => {
   return (
     <Flex
       pb={{ base: 4, lg: 8 }}
@@ -30,22 +31,26 @@ const ProjectCard = ({ tools, title, logo, description, bg, bgGradient, links, c
       bg="#0c0c0c"
       gap={4}
       padding={{ base: '6', lg: '8' }}
-      position="relative"
+      justify={'space-between'}
     >
+      <Flex justify={'space-between'}>
+        <Stack gap="8">
+          <Flex justify="space-between" direction="column">
+            <Stack>
+              <Text fontWeight="bold" size="3xl" color="gray.50">
+                {title}
+              </Text>
+              <Text fontSize={{ base: 'sm', lg: 'md' }} color="gray.300" lineHeight="1.8">
+                {description}
+              </Text>
+            </Stack>
+          </Flex>
+        </Stack>
+      </Flex>
       <Menu>
-        <MenuButton
-          top={{ base: '6', lg: '8' }}
-          right={{ base: '6', lg: '8' }}
-          position="absolute"
-          as={IconButton}
-          aria-label="Options"
-          variant="solid"
-          size="sm"
-          borderColor="gray.800"
-          borderRadius="lg"
-          color="gray.700"
-          icon={<BiLink />}
-        />
+        <MenuButton as={Button} aria-label="Options" variant="solid" size="sm" borderColor="gray.800" borderRadius="lg">
+          View more
+        </MenuButton>
 
         <MenuList
           fontFamily={`'Azeret Mono', monospace`}
@@ -76,45 +81,6 @@ const ProjectCard = ({ tools, title, logo, description, bg, bgGradient, links, c
           ))}
         </MenuList>
       </Menu>
-
-      <Stack gap="8">
-        <Flex justify="space-between" direction="column">
-          <Flex>
-            <Image alt={title} src={logo} h={28} />
-          </Flex>
-          <Stack>
-            <Text fontWeight="bold" size="2xl" color="gray.50">
-              {title}
-            </Text>
-            <Text fontSize={{ base: 'sm', lg: 'md' }} color="gray.300" lineHeight="1.8">
-              {description}
-            </Text>
-          </Stack>
-        </Flex>
-        <Flex justify="space-between">
-          <Flex gap={4} align="center">
-            {tools.map((tool) => (
-              <Icon key={Math.random()} color={tool.color} as={tool.tool} fontSize={{ base: 'md', md: 'lg' }} />
-            ))}
-          </Flex>
-
-          <Flex>
-            {colorScheme.map((item) => (
-              <Icon
-                transition="all 0.5s ease-out"
-                ml={-1}
-                key={item}
-                as={BsCircleFill}
-                color={item}
-                fontSize="xl"
-                _hover={{
-                  mr: 1,
-                }}
-              />
-            ))}
-          </Flex>
-        </Flex>
-      </Stack>
     </Flex>
   );
 };

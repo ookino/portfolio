@@ -25,29 +25,68 @@ import { IData } from '@/interfaces';
 export const data: IData = {
   projects: [
     {
-      tools: [
-        { tool: SiNextdotjs, color: 'gray.300' },
-        { tool: SiChakraui, color: 'teal' },
-        { tool: SiZoho, color: 'blue.500' },
+      title: 'Creative copies and graphic portfolio',
+      description: 'A showcase of my creativity',
+      links: [
+        {
+          label: 'live',
+          link: 'https://drive.google.com/drive/folders/1yIhP40tZITlYq0gtz8TH0GTH-CBmLK-t?usp=sharing',
+          icon: HiOutlineExternalLink,
+        },
       ],
-      title: 'Scrubs & Brushes',
-      colorScheme: ['#2F855A', '#F8F9FA', '#212529'],
-      description: 'Cleaning service landing page and cost estimator',
-      logo: '/images/assets/sb.webp',
-      links: [{ label: 'live', link: 'https://scrubsandbrushes.com', icon: HiOutlineExternalLink }],
     },
 
     {
-      tools: [
-        { tool: SiNextdotjs, color: 'gray.300' },
-        { tool: SiChakraui, color: 'teal' },
-      ],
       title: 'Portfolio',
-      colorScheme: ['gray.900', 'gray.50'],
       description: 'My personal portfolio',
-      logo: '/images/assets/okino.webp',
-      bgGradient: 'linear(to-b,  #cf59e6, #6bc5f8,)',
-      links: [{ label: 'live', link: '/', icon: HiOutlineExternalLink }],
+      links: [
+        {
+          label: 'live',
+          link: 'https://drive.google.com/file/d/1sYRlAxZ79hhIyDD2D-RrBnKUMimU9Z7u/view?usp=sharing',
+          icon: HiOutlineExternalLink,
+        },
+      ],
+    },
+
+    {
+      title: 'From Marketing to Aspiring Product Manager',
+
+      description:
+        'Building a bridge between the gap of my marketing background and the intricate world of product management. ',
+      links: [
+        {
+          label: 'live',
+          link: 'https://docs.google.com/document/d/10-8diu5xtX89P4mO-TlOokSYu97_fmBe/edit?usp=sharing&ouid=100219797326560231217&rtpof=true&sd=true',
+          icon: HiOutlineExternalLink,
+        },
+      ],
+    },
+  ],
+
+  certificates: [
+    {
+      title: 'Product Management Certificate',
+      description:
+        'Certificate of completion for the Udemy course, "Become a Product Manager | Learn the Skills & Get the Job" by Cole Mercer and Evan Kimbrell.',
+      links: [
+        {
+          label: 'live',
+          link: 'https://drive.google.com/file/d/1lvc9gtH8-9Kkx7VctsHkdAFn5qVZaXUD/view?usp=sharing',
+          icon: HiOutlineExternalLink,
+        },
+      ],
+    },
+
+    {
+      title: 'University Certificate',
+      description: 'BA Advertising, Public relations and branding',
+      links: [
+        {
+          label: 'live',
+          link: 'https://drive.google.com/file/d/15BxhzfV0sd4OTwwwvIR9cPcFT1rkYwwr/view?usp=sharing',
+          icon: HiOutlineExternalLink,
+        },
+      ],
     },
   ],
 

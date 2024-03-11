@@ -1,17 +1,10 @@
 import { IconType } from 'react-icons';
 
 export interface IProject {
-  tools: Array<{
-    tool: IconType;
-    color: string;
-  }>;
-  colorScheme: Array<string>;
   title: string;
   description: string;
-  logo: string;
   bg?: string;
   bgGradient?: string;
-  github?: string;
   links?: Array<{
     label: string;
     link: string;
@@ -55,6 +48,7 @@ export interface ILinks {
 
 export interface IData {
   projects: IProject[];
+  certificates: IProject[];
   stack: IStack[];
   aboutEmojis: Array<string>;
   education: IEducation[];
