@@ -1,10 +1,10 @@
 import { Stack, Box, Divider } from '@chakra-ui/react';
 
 import About from './about';
+import Certificates from './certificates';
 import Contact from './contact';
 import Hero from './hero';
 import Projects from './projects';
-import Certificates from './certificates';
 
 export const HomePage = () => {
   return (

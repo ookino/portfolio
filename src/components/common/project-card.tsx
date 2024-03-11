@@ -31,9 +31,9 @@ const ProjectCard = ({ title, description, bg, bgGradient, links }: IProject) =>
       bg="#0c0c0c"
       gap={4}
       padding={{ base: '6', lg: '8' }}
-      justify={'space-between'}
+      justify="space-between"
     >
-      <Flex justify={'space-between'}>
+      <Flex justify="space-between">
         <Stack gap="8">
           <Flex justify="space-between" direction="column">
             <Stack>
