@@ -1,5 +1,5 @@
 {
-  "extends": ["alloy", "alloy/react", "alloy/typescript", "next", "next/core-web-vitals"],
+  "extends": ["next", "next/core-web-vitals"],
   "env": {
     "node": true,
     "browser": true
@@ -8,17 +8,6 @@
     "REACT_APP_ENV": true
   },
   "rules": {
-    "camelcase": "off",
-    "import/order": [
-      "error",
-      {
-        // "groups": ["builtin", "external", "internal", ["sibling", "parent"], "index", "unknown"],
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ]
+    "camelcase": "off"
   }
 }
